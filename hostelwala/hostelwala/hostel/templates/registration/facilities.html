@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <title>Hostel Services</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Hostel Services</title>
+    </head>
+    <body>
+    
+    <div class="container">
+      <div class="services">
+        <h2>Facilities in hostels</h2>
+        <ul>
+          <li><a href="{% url 'girlurl' %}">Girls_Hostel</a></li>
+          <li><a href="{% url 'girlurl' %}">Boys_Hostel</a></li>
+          <li><a href="{% url 'girlurl' %}">CO-living_Hostel</a></li>
+
+
+          
+        </ul>
+      </div>
+    </div>
+    
+    <script >
+        document.addEventListener("DOMContentLoaded", function() {
+  // Get reference to the service links
+  const girlHostelLink = document.getElementById("girlHostelLink");
+  const boyHostelLink = document.getElementById("boyHostelLink");
+  const coLivingHostelLink = document.getElementById("coLivingHostelLink");
+
+  // Add click event listeners to the service links
+  girlHostelLink.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    window.location.href = "services1.html"; // Redirect to girl hostel facility page
+  });
+
+  boyHostelLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    window.location.href = "services1.html";
+  });
+
+  coLivingHostelLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    window.location.href = "services1.html";
+  });
+});
+
+    </script>
+    </body>
+    </html>
+    
+
+<style>
+    body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.services, .facilities {
+  width: 45%;
+}
+
+.services ul, .facilities ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services ul li, .facilities ul li {
+  margin-bottom: 10px;
+}
+
+.facilities {
+  display: none; /* Initially hide the facilities */
+}
+
+</style>
+
+
+ 
+
+
+</body>
+</html>

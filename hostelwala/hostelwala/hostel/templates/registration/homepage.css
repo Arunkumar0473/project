@@ -1,0 +1,127 @@
+html,body,h1,h2,h3,h4 {
+    font-family: satoshiReg;
+  }
+  
+  .mySlides {
+    height: 50vh;
+    width:fit-content;
+  
+  }
+  
+  .w3-tag, .fa {
+    cursor: pointer;
+  }
+  
+  .w3-tag {
+    height: 15px;
+    width: 15px;
+    padding: 0;
+    margin-top: 6px;
+  }
+  
+  .w3-top {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+  }
+  
+  .w3-bar .w3-button {
+    padding: 16px;
+  }
+  
+  
+
+  /*.w3-row-padding .w3-col {
+    width: 25%; /* Ensure each column takes up 25% of the width 
+    padding: 16px; /* Apply padding to each column 
+  }
+
+  .w3-container {
+    padding: 0px; /* Reset padding for container 
+  }*/
+
+  
+  .w3-green, .w3-hover-green:hover {
+    color: #fff !important;
+    background-color: #4CAF50 !important;
+  }
+  
+  .w3-container::after, .w3-row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .w3-col {
+    float: left;
+    width: 100%;
+  }
+  
+  
+  @media only screen and (min-width: 601px) {
+    .w3-col.l1 {width: 8.33333%;}
+    .w3-col.l2 {width: 16.66666%;}
+    .w3-col.l3 {width: 25%;}
+    .w3-col.l4 {width: 33.33333%;}
+    .w3-col.l5 {width: 41.66666%;}
+    .w3-col.l6 {width: 50%;}
+    .w3-col.l7 {width: 58.33333%;}
+    .w3-col.l8 {width: 66.66666%;}
+    .w3-col.l9 {width: 75%;}
+    .w3-col.l10 {width: 83.33333%;}
+    .w3-col.l11 {width: 91.66666%;}
+    .w3-col.l12 {width: 100%;}
+  
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  .about-us{
+    height: 100vh;
+    width: 100%;
+    padding: 90px 0;
+    background: #ddd;
+  }
+  .pic{
+    height: auto;
+    width:  320px;
+  }
+  .about{
+    width: 1300px;
+    max-width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .text{
+    width: 540px;
+  }
+  .text h2{
+    font-size: 60px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  
+  }
+  .text h5{
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  span{
+    color: #4070f4;
+  }
+  .text p{
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 1px;
+  }
+  .data{
+    margin-top: 30px;
+  }
+  

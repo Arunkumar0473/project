@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+           
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        textarea {
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 120px;
+            align-self: flex-end;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Customer Support</h1>
+        <form action="{% url 'support' %}" method="post" id="contact-form"> <!-- Corrected action URL -->
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="number">Phonenumber:</label> <!-- Corrected ID -->
+            <input type="text" id="number" name="number" required> <!-- Changed type to text to allow leading zeros -->
+        
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+                
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hostel Management System</p>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Retrieve form data
+            const formData = new FormData(event.target);
+            const formDataObject = Object.fromEntries(formData.entries());
+
+            // Here you can send the form data to your server for processing
+            console.log(formDataObject);
+
+            // Optionally, you can display a thank you message or redirect the user
+            alert('Your message has been sent. Thank you for contacting us!');
+            window.location.href = 'home page.html'; // Redirect to home page
+        });
+    </script>
+</body>
+</html>

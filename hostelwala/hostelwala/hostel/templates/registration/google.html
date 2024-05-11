@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Search</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hostel Search</h1>
+    <input id="searchInput" type="text" placeholder="Enter a location">
+    <div id="map"></div>
+
+    <script>
+        let map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: YOUR_DEFAULT_LATITUDE, lng: YOUR_DEFAULT_LONGITUDE},
+                zoom: 12
+            });
+            const searchInput = document.getElementById('searchInput');
+            const autocomplete = new google.maps.places.Autocomplete(searchInput);
+            autocomplete.bindTo('bounds', map);
+        }
+
+        // Function to add marker on the map
+        function addMarker(location) {
+            new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+   <!-- Add this script tag within the <head> section of your HTML -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+
+</body>
+</html>

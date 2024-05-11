@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Rooms</title>
+  
+</head>
+<body>
+   <header>
+        <h1>Choose a Room Type</h1>
+    </header>
+    <div class="container">
+        <div class="room-options">
+            <div class="room">
+                <input type="radio" id="room1" name="room" value="1"> 
+                <label for="room1">
+                    <img src="https://i.pinimg.com/originals/6b/33/3d/6b333da345a06d4d4fe51bce4eb281b7.jpg" alt="Single Room">
+                    Single sharing Room - Rs.8000
+                </label>
+            </div>
+        </div>
+        <div class="room-options">
+            <div class="room">
+                <input type="radio" id="room2" name="room" value="2">
+                <label for="room2">
+                    <img src="https://th.bing.com/th/id/OIP.zpcirxNI9vUO31oMr_473wHaFj?pid=ImgDet&w=200&h=150&c=7&dpr=1.3" alt="Double Room">
+                    Two sharing Room - Rs.7500
+                </label>
+            </div>
+        </div>
+        <div class="room-options">
+            <div class="room">
+                <input type="radio" id="room3" name="room" value="3">
+                <label for="room3">
+                    <img src="https://th.bing.com/th/id/OIP.LYolz2c8wyZIRv2OB7hXygHaFj?pid=ImgDet&w=200&h=150&c=7&dpr=1.3" alt="Triple Room">
+                    Three sharing Room - Rs.7000
+                </label>
+            </div>
+        </div>
+        <div class="room-options">
+            <div class="room">
+                <input type="radio" id="room4" name="room" value="4">
+                <label for="room4">
+                    <img src="https://th.bing.com/th/id/OIP.JM0uSgtk6iOMlp88FvKM0wHaFj?pid=ImgDet&w=200&h=150&c=7&dpr=1.3" alt="Quad Room">
+                    four sharing Room -Rs.6500
+                </label>
+            </div>
+        </div>
+        <div class="room-options">
+            <div class="room">
+                <input type="radio" id="room5" name="room" value="5">
+                <label for="room5">
+                    <img src="https://th.bing.com/th/id/OIP.O3pU-OXKJk4FHczPw64f2wHaFj?pid=ImgDet&w=200&h=150&c=7&dpr=1.3" alt="Five Sharing Room">
+                    Five Sharing Room - Rs.6000
+                </label>
+            </div>
+        </div>
+        <div class="room-options">
+            <div class="room">
+                <input type="radio" id="room6" name="room" value="6">
+                <label for="room6">
+                    <img src="https://th.bing.com/th/id/OIP.CxOuRbhvd3Tek3UKBU1rpQHaFI?pid=ImgDet&w=200&h=138&c=7&dpr=1.3" alt="Six Sharing Room">
+                    Six Sharing Room - Rs.5500
+                </label>
+            </div>
+        </div>       
+    </div>
+
+    <div>
+       
+       <a href="{% url 'bookingurl' %}"><input type="submit" value="Proceed to Book" id="book-btn" class="button" style="display:none;"></a>
+    </div>
+    
+    
+    <footer>
+        <p>&copy; 2024 Hostel Management System</p>
+    </footer>
+
+    
+</body>
+</html>
+
+<style>
+    /* Add your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4EA685;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    width: 100%; /* Adjust the width to fit the content properly */
+}
+
+
+.room-options {
+    padding: 20px;
+}
+
+.room {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #4EA685;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 1200px;
+  margin: auto; /* Center the container */
+  padding: 10px; /* Add padding for spacing */
+}
+.room-options {
+  flex: 1; /* Distribute space equally among cards */
+  max-width: 300px;
+  border: 1px solid black;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-options img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.room {
+  padding: 10px; /* Increase padding for better spacing */
+  text-align: center;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Change to 100vh for full viewport height */
+  margin: 0;
+  flex-wrap: wrap;
+  background-color: #f4f4f4;
+}
+.button {
+  display: center;
+  width: 95%;
+  padding: 8px;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+</style>
+
+<script>
+    // JavaScript code for handling user interactions
+    document.querySelectorAll('input[name="room"]').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+            var selectedRoom = document.querySelector('input[name="room"]:checked');
+            if (selectedRoom) {
+                var roomType = selectedRoom.value;
+                var roomPrice;
+                switch (roomType) {
+                    case '1':
+                        roomPrice = 8000;
+                        break;
+                    case '2':
+                        roomPrice = 7500;
+                        break;
+                    case '3':
+                        roomPrice = 7000;
+                        break;
+                    case '4':
+                        roomPrice = 6500;
+                        break;
+                    case '5':
+                        roomPrice = 6000;
+                        break;
+                    case '6':
+                        roomPrice = 5500;
+                        break;
+                    default:
+                        roomPrice = 0;
+                }
+                
+                if (roomPrice > 0) {
+                    document.getElementById('book-btn').style.display = 'block';
+                    // Redirect to booking page with room type and price
+                    document.getElementById('book-btn').addEventListener('click', function() {
+                        window.location.href = 'booking.html?type=' + roomType + '&price=' + roomPrice;
+                    });
+                } else {
+                    alert('Please select a valid room type.');
+                }
+            }
+        });
+    });
+</script>
+

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>City and Area Dropdowns</title>
+    <style>
+        body {
+            font-family: satoshiReg;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        
+        }
+        
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: satoshiReg;
+        }
+
+        h2 {
+            font-family: satoshiReg;
+            text-align: center;
+            color: #333;
+        }
+
+        select {
+            width: calc(100% - 40px); /* Adjusted width to accommodate button */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
+            font-family: satoshiReg;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        /* Added button styles */
+        button {
+            width: 80px;
+            height: 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: satoshiReg;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+</head>
+<body>
+    <video id="video-background" autoplay muted loop>
+        <source src="C:\Users\jalaa\Downloads\tiger.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+        <h2>Select a City and Area:</h2>
+        <select id="cityDropdown">
+            <option value="">Select City</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Vizag">Vizag</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Mysore">Mysore</option>
+            <option value="Chennai">Chennai</option>
+            <!-- Add more cities here -->
+        </select>
+        
+        <select id="areaDropdown">
+            <option value="">Select Area</option>
+        </select>
+        
+        <center><a href="{% url 'checkgirl' %}"><button type="submit">Submit</button></a></center>
+    </div>
+
+    <script>
+        // JavaScript to populate area dropdown based on selected city
+        document.getElementById('cityDropdown').addEventListener('change', function() {
+            var city = this.value;
+            var areaDropdown = document.getElementById('areaDropdown');
+            areaDropdown.innerHTML = ''; // Clear previous options
+    
+            if (city === 'Hyderabad') {
+                addOption(areaDropdown, 'Ameerpet');
+                addOption(areaDropdown, 'Gachibowli');
+                addOption(areaDropdown, 'Madhapur');
+                addOption(areaDropdown, 'KPHB');
+                addOption(areaDropdown, 'Miyapur');
+                addOption(areaDropdown, 'Kondapur');
+                addOption(areaDropdown, 'SR Nagar');
+                addOption(areaDropdown, 'LB Nagar');
+                addOption(areaDropdown, 'Dilsuknagar');
+                // Add more areas for Hyderabad
+            } else if (city === 'Vizag') {
+                addOption(areaDropdown, 'Beach Road');
+                addOption(areaDropdown, 'Dwaraka Nagar');
+                addOption(areaDropdown, 'MVP Colony');
+                // Add more areas for Vizag
+            } else if (city === 'Bangalore') {
+                addOption(areaDropdown, 'Indiranagar');
+                addOption(areaDropdown, 'Koramangala');
+                addOption(areaDropdown, 'Whitefield');
+                // Add more areas for Bangalore
+            }
+            else if (city === 'Mysore') {
+                addOption(areaDropdown, 'Vijayanagar');
+                addOption(areaDropdown, 'Jayalakshmipuram');
+                addOption(areaDropdown, 'Saraswathipuram');
+                // Add more areas for Mysore
+            }
+            else if (city === 'Chennai') {
+                addOption(areaDropdown, 'Adyar');
+                addOption(areaDropdown, 'Anna Nagar');
+                addOption(areaDropdown, 'T Nagar');
+                // Add more areas for Chennai
+            }
+            // Add more city cases as needed
+        });
+    
+        // Function to add options to dropdown
+        function addOption(selectElement, optionText) {
+            var option = document.createElement('option');
+            option.text = option.value = optionText;
+            selectElement.add(option);
+        }
+    
+        // Event listener for the submit button
+        document.querySelector('button[type="submit"]').addEventListener('click', function() {
+            var city = document.getElementById('cityDropdown').value;
+            var area = document.getElementById('areaDropdown').value;
+            if (city === '' || area === '') {
+            event.preventDefault(); // Prevent form submission
+            alert('Please select both city and area.'); 
+            }
+    
+            // If Ameerpet is selected, navigate to 'girlshostelpage.html'
+            if (area === 'Ameerpet') {
+                window.location.href = '#';
+            } else if(area === 'KPHB'){
+                window.location.href = 'listof.html';
+            }
+            else if(area === 'Madhapur'){
+                window.location.href = '#';
+            }
+            else if(area === 'Gachibowli'){
+                window.location.href = '#';
+            }
+            else if(area === 'Miyapur'){
+                window.location.href = '#';
+            }
+            else if(area === 'Kondapur'){
+                window.location.href = '#';
+            }
+            else if(area === 'SR Nagar'){
+                window.location.href = '#';
+            }
+            else if(area === 'LB Nagar'){
+                window.location.href = '#';
+            }
+            else if(area === 'Dilsuknagar'){
+                window.location.href = '#';
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('card_background.jpg'); /* Replace 'card_background.jpg' with your actual image path */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            text-align: center;
+        }
+
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+        }
+    </style>
+</head>
+<div class="container">
+    <h2>Select Payment Method:</h2>
+    <select id="payment-methods">
+        <option value="random">Random Scanner</option>
+        <option value="upi">UPI</option>
+        <option value="card">Card</option>
+    </select>
+    <br>
+    <button id="proceed-btn" class="button" style="display:none;">Proceed to Payment</button>
+
+    <div id="scanner" class="scanner"></div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Hostel Management System</p>
+</footer>
+
+
+    <script>
+        document.getElementById('payment-methods').addEventListener('change', function() {
+            var paymentMethod = this.value;
+            if (paymentMethod === 'random') {
+                document.getElementById('scanner').innerText = 'Random Scanner activated!';
+            } else if (paymentMethod === 'upi') {
+                showUPIOptions();
+            }
+            document.getElementById('proceed-btn').style.display = 'block';
+        });
+
+        document.getElementById('proceed-btn').addEventListener('click', function() {
+            var paymentMethod = document.getElementById('payment-methods').value;
+            if (paymentMethod === 'random') {
+                var randomScanner = generateRandomScanner();
+                alert('Random scanner generated: ' + randomScanner);
+            } else if (paymentMethod === 'card') {
+                window.location.href = "{% url 'cardurl' %}"; // Assuming this URL is correctly defined in your backend
+            }
+        });
+
+        function generateRandomScanner() {
+            return Math.floor(Math.random() * 1000000000) + 1000000000;
+        }
+
+        function showUPIOptions() {
+            document.getElementById('scanner').innerHTML = `
+                <h3>Select UPI Provider:</h3>
+                <button onclick="redirectToUPI('phonepe')">PhonePe</button>
+                <button onclick="redirectToUPI('googlepay')">Google Pay</button>
+                <button onclick="redirectToUPI('amazonpay')">Amazon Pay</button>
+                <button onclick="redirectToUPI('other')">Other</button>
+            `;
+        }
+
+        function redirectToUPI(provider) {
+            switch (provider) {
+                case 'phonepe':
+                    window.open('https://phonepe.com/', '_blank');
+                    break;
+                case 'googlepay':
+                    window.open('https://pay.google.com/', '_blank');
+                    break;
+                case 'amazonpay':
+                    window.open('https://pay.amazon.com/', '_blank');
+                    break;
+                case 'other':
+                    // Provide instructions for other UPI apps or handle it as per your requirement
+                    alert('Redirecting to other UPI apps');
+                    break;
+            }
+        }
+
+    </script>
+</body>
+</html>

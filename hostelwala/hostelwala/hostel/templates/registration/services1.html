@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+     body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Change to 100vh for full viewport height */
+  margin: 0;
+  flex-wrap: wrap;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 1200px;
+  margin: auto; /* Center the container */
+  padding: 10px; /* Add padding for spacing */
+}
+
+.card {
+  flex: 1; /* Distribute space equally among cards */
+  max-width: 300px;
+  border: 1px solid black;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 10px; /* Increase padding for better spacing */
+  text-align: center;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.hidden {
+  display: none;
+}
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.vNeJlhJyOFgo8e3E1RogLQHaF1?w=238&h=188&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+    <div class="card-content">
+      <h3>Wifi</h3>
+      <p>The force that connects us all.</p>
+      <p id="learn-more-wifi" class="hidden"> WiFi revolutionized connectivity, enabling wireless internet access, fostering mobility, and facilitating seamless digital interactions in modern society.</p>
+      <button class="button" id="learn-more-toggle-wifi">Learn More</button>
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.Llytl0uBS4WveV4D9ulZ3wHaE7?w=231&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+    <div class="card-content">
+      <h3>Accommodation</h3>
+      <p>Wherever you go, go with all your heart.</p>
+      <p id="learn-more-accommodation" class="hidden"> Accommodation: A cozy haven, a temporary abode, a place where weary travelers find rest and solace on their journey.</p>
+      <button class="button" id="learn-more-toggle-accommodation">Learn More</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.JScrjCmotnqGSAJh1Sw-CwHaE-?w=275&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Card Image">
+    <div class="card-content">
+      <h3>TV</h3>
+      <p>Television is chewing gum for the eyes.</p>
+      <p id="learn-more-tv" class="hidden">Where imagination meets reality, stories unfold, and the world comes alive in the comfort of our living rooms.</p>
+      <button class="button" id="learn-more-toggle-tv">Learn More</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.3Y5DUIl_9iywcI_Gzh_xfwHaEc?w=280&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Card Image">
+    <div class="card-content">
+      <h3>Food</h3>
+      <p>Food is the ingredient that binds us together.</p>
+      <p id="learn-more-food" class="hidden">Food nourishes, comforts, and delights. It's a cultural bridge, a symbol of love, and a source of joy.</p>
+      <button class="button" id="learn-more-toggle-food">Learn More</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.Uk4k5vb9TlapOGkdhnFqTQHaEK?w=329&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Card Image">
+    <div class="card-content">
+      <h3>Parking Area</h3>
+      <p>Finding a good parking spot is like winning the lottery.</p>
+      <p id="learn-more-area" class="hidden">Efficient parking areas optimize space, ensuring convenience and safety for vehicles.</p>
+      <button class="button" id="learn-more-toggle-area">Learn More</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.GklF56n-Si0bd2iezg664wHaHj?w=198&h=202&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Card Image">
+    <div class="card-content">
+      <h3>Hot water</h3>
+      <p>Hot water soothes the soul.</p>
+      <p id="learn-more-hotwater" class="hidden">Hot water, a soothing elixir, embraces us in warmth, invigorating our senses and rejuvenating our spirits.</p>
+      <button class="button" id="learn-more-toggle-hotwater">Learn More</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://th.bing.com/th/id/OIP.ksBHZ2Omr-h_BHGOYUyvYQHaHa?w=173&h=192&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Card Image">
+    <div class="card-content">
+      <h3>Washing machine</h3>
+      <p> The silent warriors of cleanliness, turning chaos into order, one spin at a time.</p>
+      <p id="learn-more-wash" class="hidden">A washing machine is not just an appliance; it's a time machine. It takes dirty clothes and returns them fresh and ready for new adventures</p>
+      <button class="button" id="learn-more-toggle-wash">Learn More</button>
+    </div>
+  </div>
+    <div class="card">
+      <img src="https://www.reenergizeco.com/wp-content/uploads/2023/08/do-ductless-air-conditioners-really-work.jpg" alt="Card Image">
+      <div class="card-content">
+        <h3>AC</h3>
+        <p> Chill with AC.</p>
+        <p id="learn-more-ac" class="hidden">In the heat of the moment, there's nothing more refreshing than the cold embrace of an air conditioner</p>
+        <button class="button" id="learn-more-toggle-ac">Learn More</button>
+      </div>
+    </div>
+  <div class="container">
+    <div class="card">
+      <img src="https://prakruthiresort.in/wp-content/uploads/2023/02/securityguard2-1.jpg" alt="Card Image">
+      <div class="card-content">
+        <h3>Security</h3>
+        <p> Protect with care.</p>
+        <p id="learn-more-care" class="hidden">In the heat of the moment, there's nothing more refreshing than the cold embrace of an air conditioner</p>
+        <button class="button" id="learn-more-toggle-care">Learn More</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+     //WiFi "Learn More" button functionality
+    var wifiButton = document.getElementById('learn-more-toggle-wifi');
+    var wifiContent = document.getElementById('learn-more-wifi');
+    wifiButton.addEventListener('click', function() {
+      wifiContent.classList.toggle('hidden');
+      if (wifiContent.classList.contains('hidden')) {
+        wifiButton.textContent = 'Learn More';
+      } else {
+        wifiButton.textContent = 'Show Less';
+      }
+    });
+
+    // Accommodation "Learn More" button functionality
+    var accommodationButton = document.getElementById('learn-more-toggle-accommodation');
+    var accommodationContent = document.getElementById('learn-more-accommodation');
+    accommodationButton.addEventListener('click', function() {
+      accommodationContent.classList.toggle('hidden');
+      if (accommodationContent.classList.contains('hidden')) {
+        accommodationButton.textContent = 'Learn More';
+      } else {
+        accommodationButton.textContent = 'Show Less';
+      }
+    });
+
+    // TV "Learn More" button functionality
+    var tvButton = document.getElementById('learn-more-toggle-tv');
+    var tvContent = document.getElementById('learn-more-tv');
+    tvButton.addEventListener('click', function() {
+      tvContent.classList.toggle('hidden');
+      if (tvContent.classList.contains('hidden')) {
+        tvButton.textContent = 'Learn More';
+      } else {
+        tvButton.textContent = 'Show Less';
+      }
+    });
+
+    // Food "Learn More" button functionality
+    var foodButton = document.getElementById('learn-more-toggle-food');
+    var foodContent = document.getElementById('learn-more-food');
+    foodButton.addEventListener('click', function() {
+      foodContent.classList.toggle('hidden');
+      if (foodContent.classList.contains('hidden')) {
+        foodButton.textContent = 'Learn More';
+      } else {
+        foodButton.textContent = 'Show Less';
+      }
+    });
+    var areaButton = document.getElementById('learn-more-toggle-area');
+    var areaContent = document.getElementById('learn-more-area');
+    areaButton.addEventListener('click', function() {
+      areaContent.classList.toggle('hidden');
+      if (areaContent.classList.contains('hidden')) {
+        areaButton.textContent = 'Learn More';
+      } else {
+        areaButton.textContent = 'Show Less';
+      }
+    });
+    var hotwaterButton = document.getElementById('learn-more-toggle-hotwater');
+    var hotwaterContent = document.getElementById('learn-more-hotwater');
+    hotwaterButton.addEventListener('click', function() {
+      hotwaterContent.classList.toggle('hidden');
+      if (hotwaterContent.classList.contains('hidden')) {
+        hotwaterButton.textContent = 'Learn More';
+      } else {
+        hotwaterButton.textContent = 'Show Less';
+      }
+    });
+    var washButton = document.getElementById('learn-more-toggle-wash');
+    var washContent = document.getElementById('learn-more-wash');
+    washButton.addEventListener('click', function() {
+      washContent.classList.toggle('hidden');
+      if (washContent.classList.contains('hidden')) {
+        washButton.textContent = 'Learn More';
+      } else {
+        washButton.textContent = 'Show Less';
+      }
+    });
+    var acButton = document.getElementById('learn-more-toggle-ac');
+    var acContent = document.getElementById('learn-more-ac');
+    acButton.addEventListener('click', function() {
+      acContent.classList.toggle('hidden');
+      if (acContent.classList.contains('hidden')) {
+        acButton.textContent = 'Learn More';
+      } else {
+        acButton.textContent = 'Show Less';
+      }
+    });
+    var careButton = document.getElementById('learn-more-toggle-care');
+    var careContent = document.getElementById('learn-more-care');
+   careButton.addEventListener('click', function() {
+      careContent.classList.toggle('hidden');
+      if (careContent.classList.contains('hidden')) {
+        careButton.textContent = 'Learn More';
+      } else {
+        careButton.textContent = 'Show Less';
+      }
+    });
+  </script>
+
+</body>
+</html>

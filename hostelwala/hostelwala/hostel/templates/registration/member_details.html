@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="member-details-container">
+        <h2>Member Details</h2>
+        <!-- Display member details fetched from Django backend -->
+        <ul>
+            {% for member in members %}
+                <li>{{ member.name }} - {{ member.contact }}</li>
+                <!-- Add more member details as needed -->
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

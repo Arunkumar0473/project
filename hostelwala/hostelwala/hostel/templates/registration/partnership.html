@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #partnership-details {
+            padding: 20px;
+        }
+
+        .partner-category {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .flex-card {
+            flex: 1;
+            max-width: 30%;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .flex-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .flex-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .flex-card ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .flex-card ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .flex-card ul li::before {
+           content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #c53053;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            flex-basis: 100%;
+        }
+
+        .heading {
+            background-color: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .heading h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .heading p {
+            font-size: 24px;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .flex-card {
+                max-width: 100%;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+        }
+        button {
+            width: 110px;
+            height: 45px;
+            background-color: #c53053;
+            color: #fff;
+            border: none;
+            border-radius:5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading"><h1>Become a Valued <br>Partner with Isthara</h1>
+        <p>Welcome to a world of growth, and boundless potential. Partnerwith Isthara <br>for Unforgettable Co-Dining and Co-Living Collaborations.</p>
+        <br>
+        
+        <button type="submit">Partner with Us</button>
+    </div>
+
+    
+    <section id="partnership-details">
+        <h2>Grow With Us</h2>
+        
+        <div class="partner-category">
+          <div class="flex-card">
+            <img src="https://img.freepik.com/free-photo/close-up-woman-s-hand-giving-house-key-man-wooden-table_23-2148204009.jpg?t=st=1710703223~exp=1710706823~hmac=9710034ad1f0275e4824e3f7afc1295939a6d4ff9b09622ba4259562390dd90e&w=826" alt="Property Owners">
+            <ul>
+                <h3>Property Owners</h3>
+              <li>Convert your space into a food landmark</li>
+              <li>Earn more per sq ft.</li>
+              <li>Complete transparency in earnings & reports</li>
+              <li>Timely payments</li>
+            </ul>
+          </div>
+          
+          <div class="flex-card">
+            <img src="https://img.freepik.com/free-photo/top-view-bowls-with-indian-food_23-2148723454.jpg?t=st=1710704730~exp=1710708330~hmac=ff59280eced5162b52bb8e01f74f47187ec1e6a02f065a914426d248ddcfa5b8&w=826" alt="Food Vendors">
+            <ul>
+                <h3>Food Vendors</h3>
+              <li>Take your brand to places with our Food Courts</li>
+              <li>Unlock your earning potential</li>
+              <li>Zero leakage in sales and streamline operations</li>
+              <li>Be part of a larger food ecosystem</li>
+            </ul>
+          </div>
+          
+          <div class="flex-card">
+            <img src="https://img.freepik.com/free-vector/college-students-concept-illustration_114360-10205.jpg?t=st=1710703357~exp=1710706957~hmac=202d403ad6c7b4d0da98d6c3812ab71137181ae614ffac5cde6b038ef078251c&w=826" alt="Colleges/Corporate">
+            <ul>
+                <h3>Colleges/Corporate</h3>
+              <li>Provide more options and variety</li>
+              <li>Avoid the hassle of vendor dealing</li>
+              <li>360 degree standard quality control</li>
+              <li>Rating and Review</li>
+              <li>Digital Food benefit program</li>
+            </ul>
+          </div>
+        </div>
+     </section>
+      
+</body>
+</html>
